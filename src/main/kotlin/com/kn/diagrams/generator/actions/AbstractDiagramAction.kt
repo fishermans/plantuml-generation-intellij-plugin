@@ -1,5 +1,6 @@
 package com.kn.diagrams.generator.actions
 
+import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
@@ -22,6 +23,10 @@ abstract class AbstractDiagramAction<T : DiagramConfiguration> : AnAction() {
 
     init {
         this.setInjectedContext(true)
+    }
+
+    override fun getActionUpdateThread(): ActionUpdateThread {
+        return ActionUpdateThread.BGT
     }
 
     fun generateWith(event: AnActionEvent, configuration: T) {

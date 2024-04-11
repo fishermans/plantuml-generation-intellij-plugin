@@ -1,7 +1,7 @@
 package com.kn.diagrams.generator.generator
 
-import com.intellij.util.castSafelyTo
 import com.kn.diagrams.generator.builder.*
+import com.kn.diagrams.generator.castSafelyTo
 import com.kn.diagrams.generator.escapeHTML
 import com.kn.diagrams.generator.graph.*
 import com.kn.diagrams.generator.notReachable

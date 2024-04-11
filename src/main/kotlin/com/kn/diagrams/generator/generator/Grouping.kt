@@ -1,10 +1,10 @@
 package com.kn.diagrams.generator.generator
 
-import com.intellij.util.castSafelyTo
 import com.kn.diagrams.generator.builder.DotCluster
 import com.kn.diagrams.generator.builder.DotClusterConfig
 import com.kn.diagrams.generator.builder.DotDiagramBuilder
 import com.kn.diagrams.generator.builder.DotNode
+import com.kn.diagrams.generator.castSafelyTo
 import com.kn.diagrams.generator.graph.*
 
 

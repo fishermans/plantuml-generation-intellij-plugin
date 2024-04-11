@@ -45,7 +45,6 @@ class GraphCache(project: Project, val filter: RestrictionFilter, searchMode: Se
     private fun addClassesToCache(allClasses: MutableList<PsiClass>) {
         val stop = Stopwatch.createStarted()
 
-        val i = AtomicInteger(0)
         val chunks = allClasses.chunked(10)
         ProgressManager.getGlobalProgressIndicator()?.text = "Cache class details"
 

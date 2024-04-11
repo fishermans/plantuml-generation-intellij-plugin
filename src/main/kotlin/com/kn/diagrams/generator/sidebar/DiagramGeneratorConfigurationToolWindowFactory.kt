@@ -5,13 +5,13 @@ import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.openapi.wm.ToolWindowManager
 import com.intellij.ui.content.ContentFactory
-import com.intellij.util.castSafelyTo
+import com.kn.diagrams.generator.castSafelyTo
 
 
 class DiagramGeneratorConfigurationToolWindowFactory : ToolWindowFactory {
 
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
-        val contentFactory = ContentFactory.SERVICE.getInstance()
+        val contentFactory = ContentFactory.getInstance()
         val content = contentFactory.createContent(
             DiagramGeneratorConfigurationToolWindow(project), "", false)
 

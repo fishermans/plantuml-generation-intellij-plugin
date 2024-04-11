@@ -3,7 +3,7 @@ package com.kn.diagrams.generator.actions
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.psi.impl.file.PsiJavaDirectoryImpl
-import com.intellij.util.castSafelyTo
+import com.kn.diagrams.generator.castSafelyTo
 
 class RegenerateDiagramRecursiveAction : RegenerateDiagramAction() {
 

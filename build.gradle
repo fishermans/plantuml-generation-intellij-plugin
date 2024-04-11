@@ -1,12 +1,13 @@
 
 plugins {
-    id 'java'
-    id 'org.jetbrains.intellij' version '0.6.5'
-    id 'org.jetbrains.kotlin.jvm' version '1.4.21'
+    id "java"
+    id "idea"
+    id "org.jetbrains.intellij" version "1.17.3"
+    id "org.jetbrains.kotlin.jvm" version "1.9.23"
 }
 
-group 'com.kn.diagrams.generator.generator'
-version '2021.1.0'
+group "com.kn.diagrams.generator.generator"
+version "2024.1.0"
 
 repositories {
     mavenCentral()
@@ -16,22 +17,32 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation "org.jetbrains.kotlin:kotlin-reflect:"
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation "junit:junit:4.13.2"
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+// JAVA compatibility
+compileJava {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
 
 compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_17
 }
 compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_17
 }
 
 intellij {
-    version '2020.3.1'
-    plugins 'com.intellij.java'
+    //version = "2020.3.1"
+    version = "222.3345.118"
+    type = "IC"
+    plugins = ["java"]
+    updateSinceUntilBuild = false
+}
+
+listProductsReleases {
+    sinceBuild = "222.3345.118"
 }
 
 prepareSandbox {
@@ -43,4 +54,9 @@ runIde{
     maxHeapSize = "8G"
 }
 
+
+wrapper() {
+    gradleVersion = "8.3"
+    distributionUrl = distributionUrl.replace("bin", "all")
+}
 

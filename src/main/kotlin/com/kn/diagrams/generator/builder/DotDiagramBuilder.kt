@@ -303,7 +303,7 @@ enum class ConfigLineFormat(val lineSeparator: String) {
 
 fun formattedConfigString(lineType: ConfigLineFormat = ConfigLineFormat.SingleLine, vararg parameter: KMutableProperty0<*>): String {
     val values = parameter
-            .map { it.name.toLowerCase() to it.get() }
+            .map { it.name.lowercase() to it.get() }
             .filter { (_, value) -> value != null }
             .joinToString(lineType.lineSeparator) { (key, value) ->
                 if (containsInvalidCharacters(value!!.toString())) {

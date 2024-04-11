@@ -55,7 +55,7 @@ fun PsiFile?.isJava() = this?.language?.id == "JAVA"
 fun PsiFile.findClasses():List<PsiClass> {
     val classes = mutableListOf<PsiClass>()
 
-    when (name.substringAfterLast(".").toLowerCase()) {
+    when (name.substringAfterLast(".").lowercase()) {
         "java" -> {
             val visitor = object : PsiRecursiveElementVisitor() {
                 override fun visitElement(element: PsiElement) {
@@ -85,3 +85,5 @@ fun String.escapeHTML() = this
         .replace("<", "&lt;")
         .replace(">", "&gt;")
         .replace("\"", "&quot;")
+
+inline fun <reified T> Any?.castSafelyTo(): T? = this as? T
